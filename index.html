@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 3 PI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- my CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media only screen and (max-width: 1016px) {
+            .main-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                transition: display 0.2s;
+            }
+
+            .main {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                margin: 0;
+                width: 100%;
+                margin-top: 35px;
+                padding: 4px 0 4px 4px;
+                background-color: #000;
+                border-radius: 5px;
+                border: 1px solid #000;
+                transition: width 0.2s;
+            }
+
+            .related-videos {
+                display: none;
+                transition: display 0.2s;
+            }
+            
+            .description-wrapper:nth-child(1) {
+                display: block;
+            }
+            .description-wrapper:nth-child(2) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- header -->
+    <div class="header">
+
+        <!-- humberger dan youtube -->
+        <div class="item item1">
+            <!-- humberger -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <!-- youtube -->
+            <div class="youtube-wrapper">
+                <span class="id">ID</span>
+                <div class="youtube">
+                    <img src="youtube.png" alt="">
+                    <span>YouTube</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- input dan pencarian -->
+        <div class="item2">
+            <div class="search-wrapper">
+                <input type="text" placeholder="Telusuri">
+                <button type="button" class="search"><i class="bi bi-search"></i></button>
+            </div>
+            <div class="microphone">
+                <button type="button" onclick="console.log('hello world')" class="mic">
+                    <i class="bi bi-mic-fill"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- users -->
+        <div class="item item3">
+            <div class="users-wrapper">
+                <div class="each_item item3_1"><i class="bi bi-camera-video"></i></div>
+                <div class="each_item item3_2"><i class="bi bi-bell"></i></div>
+                <div class="each_item item3_3"><i class="bi bi-person-circle"></i></div>
+            </div>
+        </div>
+    </div>
+    <!-- akhir dari header -->
+
+
+    <!-- pembungkus main -->
+    <div class="main-wrapper">
+
+        <!-- main -->
+        <div class="main">
+
+            <!-- info (simbol "i" di dalam video yang akan merujuk pada video yang direkomendasikan) -->
+            <div class="info">
+                <i class="bi bi-info-circle-fill"></i>
+                <span class="tooltiptext">kunjungi video!!!</span>
+            </div>
+            <!-- akhir info -->
+
+            <!-- gambar yang tampak seperti video, digantikan dengan thumbnail saja -->
+            <img src="asset/thumbnailvideo.png" alt="">
+            <!-- akhir gambar -->
+
+            <!-- controller-waktu / timer video (tidak berpengaruh jika diatur) -->
+            <div class="range-container">
+                <div class="range2"></div>
+                <div class="range1"></div>
+                <span class="range-bullet"></span>
+            </div>
+            <!-- akhir controller-waktu -->
+
+            <!-- seperangkat kontroler video seperti "prev", "next", "play/pause", "volume" dll -->
+            <div class="video-controller">
+                <div class="controller1">
+                    <div class="previous">
+                        <div class="play"></div>
+                        <div class="pause"></div>
+                    </div>
+                    <div class="play-pause">
+                        <div class="play-child play"></div>
+                        <div class="play-child play"></div>
+                    </div>
+                    <div class="next">
+                        <div class="pause"></div>
+                        <div class="play"></div>
+                    </div>
+                    <div class="volume">
+                        <i class="bi bi-volume-down"></i>
+                    </div>
+                    <div class="timer">
+                        <div>0:10 / 5:08</div>
+                    </div>
+                </div>
+                <div class="controller2">
+                    <div class="subtitle">
+                        <img src="asset/subtitles.png" class="pict" alt="">
+                        <div class="red-bar"></div>
+                    </div>
+
+                    <div class="setting">
+                        <i class="bi bi-gear"></i>
+                    </div>
+
+                    <div class="miniplayer">
+                        <img src="asset/miniplayer.png" alt="">
+                    </div>
+
+                    <div class="movie">
+                        <div></div>
+                    </div>
+
+                    <div class="cast">
+                        <i class="bi bi-cast"></i>
+                    </div>
+
+                    <div class="fullscreen"><i class="bi bi-fullscreen"></i></div>
+                </div>
+            </div>
+            <!-- akhir dari kontroler video -->
+
+        </div>
+        <!-- akhir main -->
+
+        <!-- related videos (menampilkan video-video yang direkomendasikan / video terkait / video serupa) -->
+        <div class="related-videos">
+            <div class="related-header">
+                <h3>My Mix</h3>
+                <p>Mixes are playlists Youtube makes for you</p>
+            </div>
+            <div class="related-body">
+                <div class="related-lists">
+                    <p>1</p>
+                    <img src="asset/1.png" alt="">
+                    <div class="related-description">
+                        <p>Luka Disini - UNGU | Waktu Yang Dinanti 2.0</p>
+                        <p>UNGU Band</p>
+                    </div>
+                </div>
+                <div class="related-lists">
+                    <p>2</p>
+                    <img src="asset/2.png" alt="">
+                    <div class="related-description">
+                        <p>Peterpan - Semua Tentang Kita (Official Music Video)</p>
+                        <p>Musica Studios</p>
+                    </div>
+                </div>
+                <div class="related-lists">
+                    <p>3</p>
+                    <img src="asset/3.png" alt="">
+                    <div class="related-description">
+                        <p>Repvblik - Sayang Sampai Mati (Official Music Video)</p>
+                        <p>Pro-M</p>
+                    </div>
+                </div>
+                <div class="related-lists">
+                    <p>4</p>
+                    <img src="asset/4.png" alt="">
+                    <div class="related-description">
+                        <p>Repvblik - Hanya ingin Kau Tahu (Official Music Video)</p>
+                        <p>GP Records</p>
+                    </div>
+                </div>
+                <div class="related-lists">
+                    <p>5</p>
+                    <img src="asset/5.png" alt="">
+                    <div class="related-description">
+                        <p>Hello - Dua Cincin (Official Music Video Nagaswara)...</p>
+                        <p>NAGASWARA Official Video Ind...</p>
+                    </div>
+                </div>
+                <div class="related-lists">
+                    <p>6</p>
+                    <img src="asset/6.png" alt="">
+                    <div class="related-description">
+                        <p>Luka Disini - UNGU | Waktu Yang Dinanti 2.0</p>
+                        <p>UNGU Band</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- akhir related-videos -->
+    </div>
+    <!-- akhir pembungkus main -->
+
+    <!-- pembungkus deskripsi video -->
+    <div class="description-wrapper">
+        <!-- judul video -->
+        <h2>Repvblik - Sayang Sampai Mati (Official Music Video)</h2>
+        <!-- akhir judul video  -->
+
+        <!-- seperangkat deskripsi video seperti channel, subscribe, like-share, dll -->
+        <div class="description">
+            <div class="channel">
+                <i class="bi bi-person-circle"></i>
+                <div class="verified">
+                    <div class="channel-name">
+                        <div>Pro-M <i class="bi bi-check2-circle"></i></div>
+                    </div>
+                    <div class="subscriber">
+                        <div>1.45M subscribers</div>
+                    </div>
+                </div>
+                <div class="subscribe">
+                    <span>Subscribe</span>
+                </div>
+            </div>
+            <div class="more">
+                <div class="like-dislike">
+                    <div class="like">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                        <div>223k</div>
+                    </div>
+                    <i>|</i>
+                    <div class="dislike">
+                        <i class="bi bi-hand-thumbs-down"></i>
+                    </div>
+                </div>
+                <div class="share">
+                    <img src="asset/share.png" alt="">
+                    <div>share</div>
+                </div>
+                <div class="download">
+                    <img src="asset/download.png" alt="">
+                    <div>download</div>
+                </div>
+                <i class="bi bi-three-dots"></i>
+            </div>
+        </div>
+        <!-- akhir seperangkat deskripsi -->
+    </div>
+    <!-- akhir pembungkus video -->
+     
+    <!-- my javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
